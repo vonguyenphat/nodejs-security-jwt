@@ -17,7 +17,6 @@ const rolesShop = {
 class AccessService {
     /*
     1-check token used 
-
     */
     static handleRefreshToken = async ({ refreshToken, user, keyStore }) => {
         const { userId, email } = user;
@@ -47,7 +46,7 @@ class AccessService {
         })
         return {
             metadata: {
-                shop: getInfoData({ fields: ['_id', 'name', 'email'], object: foundShop }),
+                shop: getInfoData({ fields: ['_id', 'name', 'email', 'roles'], object: foundShop }),
                 tokens
             }
         }
@@ -89,7 +88,7 @@ class AccessService {
         }
         return {
             metadata: {
-                shop: getInfoData({ fields: ['_id', 'name', 'email'], object: foundShop }),
+                shop: getInfoData({ fields: ['_id', 'name', 'email', 'roles'], object: foundShop }),
                 tokens
             }
         }
@@ -121,13 +120,12 @@ class AccessService {
                 privateKey,
                 refreshToken: tokens.refreshToken
             })
-
             if (!keystore) {
                 throw new BadRequestError(`Error: keystore error!`);
             }
             return {
                 metadata: {
-                    shop: getInfoData({ fields: ['_id', 'name', 'email'], object: newShop }),
+                    shop: getInfoData({ fields: ['_id', 'name', 'email', 'roles'], object: newShop }),
                     tokens
                 }
             }
