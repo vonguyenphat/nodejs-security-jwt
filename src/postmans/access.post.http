@@ -1,0 +1,31 @@
+@url_dev=http://localhost:3055/v1/api
+@api_key=86e69efed007b4b5d76281b0aeed20123e11ac6940b70866d52f2a1869798410f6d86fe889489605479601c857baf5bd7a3b9c45aa3ef0bd476dc013a6536643
+### signUp
+POST {{url_dev}}/shop/signUp
+Content-Type: application/json
+x-api-key:{{api_key}}
+
+{
+    "name":"Shop Phatvn",
+    "email":"shopphatvn1@gmail.com",
+    "password":"abc123"
+}
+
+
+### login
+POST {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key:{{api_key}}
+
+{
+    "email":"shopphatvn1@gmail.com",
+    "password":"abc123"
+}
+
+### logout
+POST {{url_dev}}/shop/logout
+Content-Type: application/json
+x-api-key:{{api_key}}
+x-client-id:6607723bac29a84608830e84
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjA3NzIzYmFjMjlhODQ2MDg4MzBlODQiLCJlbWFpbCI6InNob3BwaGF0dm4xQGdtYWlsLmNvbSIsImlhdCI6MTcxMTc2NzYyMSwiZXhwIjoxNzEyMzcyNDIxfQ.r77221a9OQO25RnqMGAa7ThkrcWIytXr3y1NycXBIjE
+
